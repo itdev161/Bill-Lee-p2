@@ -1,22 +1,21 @@
-import { truncate } from 'fs';
-import moongoose, { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 
-const UserSchema = new Mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
     },
     email: {
-        type: String,
+        type: String, 
         required: true,
         unique: true
     },
     password: {
-        type: String,
-        unique: true
-    },
+        type: String;
+        required: true
+    }
 });
 
-const User = Mongoose.model('user', UserSchema);
+const User = mongoose.model('user', UserSchema);
 
 export default User;
